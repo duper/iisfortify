@@ -1,0 +1,254 @@
+Windows Registry Editor Version 5.00
+; IISFortify Cryptography Hardening Script v1.2.0
+; By Chris Campbell.
+
+; Define credential provider.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders]
+"SecurityProviders"="credssp.dll"
+
+; Enable Schannel logging.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL]
+"EventLogging"=dword:00000001
+"DisableRenegoOnServer"=dword:00000001
+"DisableRenegoOnClient"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers]
+
+; Enable AES.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 128/128]
+"Enabled"=dword:ffffffff
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 256/256]
+"Enabled"=dword:ffffffff
+
+; Disable DES.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DES 56/56]
+"Enabled"=dword:00000000
+
+; Disable NULL.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NULL]
+"Enabled"=dword:00000000
+
+; Disable RC2.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 128/128]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 40/128]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 56/128]
+"Enabled"=dword:00000000
+
+; Disable RC4.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 64/128]
+"Enabled"=dword:00000000
+
+; Enable RSA.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RSA 128/128]
+"Enabled"=dword:ffffffff
+
+; Enable TDES.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168/168]
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\CipherSuites]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes]
+
+; Enable MD5 (legacy support).
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\MD5]
+"Enabled"=dword:00000000
+
+; Enable SHA1 (legacy support).
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA]
+"Enabled"=dword:00000000
+
+; Enable SHA256.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA256]
+"Enabled"=dword:ffffffff
+
+; Enable SHA384.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA384]
+"Enabled"=dword:ffffffff
+
+; Enable SHA512.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA512]
+"Enabled"=dword:ffffffff
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms]
+
+; Enable Diffie-Hellman.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\Diffie-Hellman]
+"Enabled"=dword:ffffffff
+
+; Enable Eliptic-Curve Diffie-Hellman.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\ECDH]
+"Enabled"=dword:ffffffff
+
+; Enabel PKCS.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\KeyExchangeAlgorithms\PKCS]
+"Enabled"=dword:ffffffff
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols]
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello]
+
+; Disable MPUH.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Server]
+"Enabled"=dword:00000000
+"DisabledByDefault"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0]
+
+; Disable PCT.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Client]
+"DisabledByDefault"=dword:00000000
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Server]
+"Enabled"=dword:00000000
+"DisabledByDefault"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0]
+
+; Disable SSLv2.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Client]
+"DisabledByDefault"=dword:00000001
+"Enabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server]
+"Enabled"=dword:00000000
+"DisabledByDefault"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0]
+
+; Disable SSLv3.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client]
+"Enabled"=dword:00000000
+"DisabledByDefault"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server]
+"Enabled"=dword:00000000
+"DisabledByDefault"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0]
+
+; Enable TLS 1.0.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client]
+"Enabled"=dword:00000001
+"DisabledByDefault"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server]
+"Enabled"=dword:ffffffff
+"DisabledByDefault"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1]
+
+; Enable TLS 1.1.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client]
+"DisabledByDefault"=dword:00000000
+"Enabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server]
+"DisabledByDefault"=dword:00000000
+"Enabled"=dword:ffffffff
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2]
+
+; Enable TLS 1.2.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client]
+"DisabledByDefault"=dword:00000000
+"Enabled"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server]
+"DisabledByDefault"=dword:00000000
+"Enabled"=dword:ffffffff
+
+; Configure WDigest.
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\WDigest]
+"Debuglevel"=dword:00000000
+"Negotiate"=dword:00000000
+"UTF8HTTP"=dword:00000001
+"UTF8SASL"=dword:00000001
+; Use only 3DES.
+"DigestEncryptionAlgorithms"="3des"
+
+; Optimise SSL cipher order.
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Cryptography\Configuration\SSL\00010002]
+"Functions"="TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P521,TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384_P384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P521,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P384,TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256_P256,TLS_DHE_RSA_WITH_AES_256_GCM_SHA384,TLS_DHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384_P521,TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384_P384,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P521,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P256,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256_P521,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256_P384,TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256_P256,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P521,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P384,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256"
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Cryptography\Configuration\Local\SSL\00010002]
+@="NCRYPT_SCHANNEL_INTERFACE"
+"EccCurves"=hex(7):4e,00,69,00,73,00,74,00,50,00,32,00,35,00,36,00,00,00,4e,00,\
+  69,00,73,00,74,00,50,00,33,00,38,00,34,00,00,00,00,00
+"Functions"=hex(7):54,00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,00,45,00,5f,00,\
+  45,00,43,00,44,00,53,00,41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,\
+  00,53,00,5f,00,32,00,35,00,36,00,5f,00,47,00,43,00,4d,00,5f,00,53,00,48,00,\
+  41,00,33,00,38,00,34,00,5f,00,50,00,35,00,32,00,31,00,00,00,54,00,4c,00,53,\
+  00,5f,00,45,00,43,00,44,00,48,00,45,00,5f,00,45,00,43,00,44,00,53,00,41,00,\
+  5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,32,00,35,00,36,\
+  00,5f,00,47,00,43,00,4d,00,5f,00,53,00,48,00,41,00,33,00,38,00,34,00,5f,00,\
+  50,00,33,00,38,00,34,00,00,00,54,00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,\
+  00,45,00,5f,00,45,00,43,00,44,00,53,00,41,00,5f,00,57,00,49,00,54,00,48,00,\
+  5f,00,41,00,45,00,53,00,5f,00,31,00,32,00,38,00,5f,00,47,00,43,00,4d,00,5f,\
+  00,53,00,48,00,41,00,32,00,35,00,36,00,5f,00,50,00,35,00,32,00,31,00,00,00,\
+  54,00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,00,45,00,5f,00,45,00,43,00,44,\
+  00,53,00,41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,\
+  31,00,32,00,38,00,5f,00,47,00,43,00,4d,00,5f,00,53,00,48,00,41,00,32,00,35,\
+  00,36,00,5f,00,50,00,33,00,38,00,34,00,00,00,54,00,4c,00,53,00,5f,00,45,00,\
+  43,00,44,00,48,00,45,00,5f,00,45,00,43,00,44,00,53,00,41,00,5f,00,57,00,49,\
+  00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,31,00,32,00,38,00,5f,00,47,00,\
+  43,00,4d,00,5f,00,53,00,48,00,41,00,32,00,35,00,36,00,5f,00,50,00,32,00,35,\
+  00,36,00,00,00,54,00,4c,00,53,00,5f,00,44,00,48,00,45,00,5f,00,52,00,53,00,\
+  41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,32,00,35,\
+  00,36,00,5f,00,47,00,43,00,4d,00,5f,00,53,00,48,00,41,00,33,00,38,00,34,00,\
+  00,00,54,00,4c,00,53,00,5f,00,44,00,48,00,45,00,5f,00,52,00,53,00,41,00,5f,\
+  00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,31,00,32,00,38,00,\
+  5f,00,47,00,43,00,4d,00,5f,00,53,00,48,00,41,00,32,00,35,00,36,00,00,00,54,\
+  00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,00,45,00,5f,00,45,00,43,00,44,00,\
+  53,00,41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,32,\
+  00,35,00,36,00,5f,00,43,00,42,00,43,00,5f,00,53,00,48,00,41,00,33,00,38,00,\
+  34,00,5f,00,50,00,35,00,32,00,31,00,00,00,54,00,4c,00,53,00,5f,00,45,00,43,\
+  00,44,00,48,00,45,00,5f,00,45,00,43,00,44,00,53,00,41,00,5f,00,57,00,49,00,\
+  54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,32,00,35,00,36,00,5f,00,43,00,42,\
+  00,43,00,5f,00,53,00,48,00,41,00,33,00,38,00,34,00,5f,00,50,00,33,00,38,00,\
+  34,00,00,00,54,00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,00,45,00,5f,00,52,\
+  00,53,00,41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,\
+  32,00,35,00,36,00,5f,00,43,00,42,00,43,00,5f,00,53,00,48,00,41,00,33,00,38,\
+  00,34,00,5f,00,50,00,35,00,32,00,31,00,00,00,54,00,4c,00,53,00,5f,00,45,00,\
+  43,00,44,00,48,00,45,00,5f,00,52,00,53,00,41,00,5f,00,57,00,49,00,54,00,48,\
+  00,5f,00,41,00,45,00,53,00,5f,00,32,00,35,00,36,00,5f,00,43,00,42,00,43,00,\
+  5f,00,53,00,48,00,41,00,33,00,38,00,34,00,5f,00,50,00,33,00,38,00,34,00,00,\
+  00,54,00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,00,45,00,5f,00,52,00,53,00,\
+  41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,32,00,35,\
+  00,36,00,5f,00,43,00,42,00,43,00,5f,00,53,00,48,00,41,00,33,00,38,00,34,00,\
+  5f,00,50,00,32,00,35,00,36,00,00,00,54,00,4c,00,53,00,5f,00,45,00,43,00,44,\
+  00,48,00,45,00,5f,00,45,00,43,00,44,00,53,00,41,00,5f,00,57,00,49,00,54,00,\
+  48,00,5f,00,41,00,45,00,53,00,5f,00,31,00,32,00,38,00,5f,00,43,00,42,00,43,\
+  00,5f,00,53,00,48,00,41,00,32,00,35,00,36,00,5f,00,50,00,35,00,32,00,31,00,\
+  00,00,54,00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,00,45,00,5f,00,45,00,43,\
+  00,44,00,53,00,41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,\
+  5f,00,31,00,32,00,38,00,5f,00,43,00,42,00,43,00,5f,00,53,00,48,00,41,00,32,\
+  00,35,00,36,00,5f,00,50,00,33,00,38,00,34,00,00,00,54,00,4c,00,53,00,5f,00,\
+  45,00,43,00,44,00,48,00,45,00,5f,00,45,00,43,00,44,00,53,00,41,00,5f,00,57,\
+  00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,31,00,32,00,38,00,5f,00,\
+  43,00,42,00,43,00,5f,00,53,00,48,00,41,00,32,00,35,00,36,00,5f,00,50,00,32,\
+  00,35,00,36,00,00,00,54,00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,00,45,00,\
+  5f,00,52,00,53,00,41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,\
+  00,5f,00,31,00,32,00,38,00,5f,00,43,00,42,00,43,00,5f,00,53,00,48,00,41,00,\
+  32,00,35,00,36,00,5f,00,50,00,35,00,32,00,31,00,00,00,54,00,4c,00,53,00,5f,\
+  00,45,00,43,00,44,00,48,00,45,00,5f,00,52,00,53,00,41,00,5f,00,57,00,49,00,\
+  54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,31,00,32,00,38,00,5f,00,43,00,42,\
+  00,43,00,5f,00,53,00,48,00,41,00,32,00,35,00,36,00,5f,00,50,00,33,00,38,00,\
+  34,00,00,00,54,00,4c,00,53,00,5f,00,45,00,43,00,44,00,48,00,45,00,5f,00,52,\
+  00,53,00,41,00,5f,00,57,00,49,00,54,00,48,00,5f,00,41,00,45,00,53,00,5f,00,\
+  31,00,32,00,38,00,5f,00,43,00,42,00,43,00,5f,00,53,00,48,00,41,00,32,00,35,\
+  00,36,00,5f,00,50,00,32,00,35,00,36,00,00,00,00,00
